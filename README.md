@@ -35,7 +35,7 @@ After you're finished please remove all the comments and instructions!
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 [your_project_name] <a name="about-project"></a>
-> A ruby on rails blog with full CRUD operation for managements of posts and comments
+> A ruby on rails blog with full CRUD operation for managements of posts and comment
 
 **[your_project__name]** is a...
 
