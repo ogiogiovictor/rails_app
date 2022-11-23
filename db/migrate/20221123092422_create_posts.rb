@@ -1,0 +1,15 @@
+class CreatePosts < ActiveRecord::Migration[7.0]
+  def change
+    create_table :posts do |t|
+      t.integer :authorid
+      t.text :title
+      t.text :text
+      t.integer :postcounter
+      t.integer :likecounter
+      t.timestamps
+    end
+
+    add_index :posts, :authorid
+    #Ex:- add_index("admin_users", "username")
+  end
+end
