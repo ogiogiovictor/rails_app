@@ -15,39 +15,38 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_092555) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.integer "authorid"
-    t.integer "postid"
+    t.integer "author_id"
+    t.integer "post_id"
     t.text "text"
-    t.text "postcounter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["authorid", "postid"], name: "index_comments_on_authorid_and_postid"
+    t.index ["author_id", "post_id"], name: "index_comments_on_author_id_and_post_id"
   end
 
   create_table "likes", force: :cascade do |t|
-    t.integer "authorid"
-    t.text "postid"
+    t.integer "author_id"
+    t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["authorid", "postid"], name: "index_likes_on_authorid_and_postid"
+    t.index ["author_id", "post_id"], name: "index_likes_on_author_id_and_post_id"
   end
 
   create_table "posts", force: :cascade do |t|
-    t.integer "authorid"
+    t.integer "author_id"
     t.text "title"
     t.text "text"
-    t.integer "postcounter"
-    t.integer "likecounter"
+    t.integer "comments_count", default: 0
+    t.integer "likes_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["authorid"], name: "index_posts_on_authorid"
+    t.index ["author_id"], name: "index_posts_on_author_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.text "photo"
     t.text "bio"
-    t.text "postcounter"
+    t.integer "post_counter", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
