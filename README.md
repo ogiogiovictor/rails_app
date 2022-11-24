@@ -28,14 +28,13 @@ After you're finished please remove all the comments and instructions!
   <br/>
 
   <h3><b>Blog</b></h3>
-
 </div>
 
 
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 [your_project_name] <a name="about-project"></a>
-> A ruby on rails blog with full CRUD operation for managements of posts and comment
+> A ruby on rails blog with full CRUD operations for managements of posts and comments
 
 **[your_project__name]** is a...
 
@@ -76,6 +75,7 @@ After you're finished please remove all the comments and instructions!
 - Associations within the database environment
 - Ruby on Rails configuration with postgresql
 - Implementation of FULL CRUD system for the block
+- One-to-one and Many to many Relationships
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
