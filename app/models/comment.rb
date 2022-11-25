@@ -1,9 +1,10 @@
 class Comment < ApplicationRecord
-  belongs_to :user, class_name: 'User'
+  # belongs_to :user, class_name: 'User'
+  belongs_to :author, class_name: 'User'
   belongs_to :post, class_name: 'Post'
 
   def update_user_comment
-    user.update(comments_counter: user.comments.all.length)
+    author.update(comments_counter: author.comments.all.length)
   end
 
   def update_post_comment

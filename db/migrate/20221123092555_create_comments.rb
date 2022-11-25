@@ -4,7 +4,7 @@ class CreateComments < ActiveRecord::Migration[7.0]
       #t.integer :author_id
       #t.integer :post_id
       t.references  :post, null: false, foreign_key: { to_table: :posts }
-      t.references  :user, null: false, foreign_key: { to_table: :users }
+      t.references  :author, null: false, foreign_key: { to_table: :users }
       t.text :text
       t.timestamps
     end
