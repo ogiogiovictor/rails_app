@@ -1,0 +1,29 @@
+<h1>All Blogs</h1>
+
+<table width="50%">
+    <thead>
+    <tr>
+    <th>S/N</th>
+     <th>USERNAME</th>
+      <th>BIO</th>
+      <th>PHOTO</th>
+    </tr>
+    </thead>
+    <tbody>
+    <%  @user.each do |u| %>
+        <tr>
+            <td><%= u.id %></td>
+            <td><%= u.name %> </td>
+            <td><%= u.bio %></td>
+            <td><%= u.photo %></td>
+            <td>
+            <%= link_to 'Show', user_path(u) %>
+            </td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
+
+<p>
+<%# <%= link_to 'Create User', new_user_path %> 
+</p>
