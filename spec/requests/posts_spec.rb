@@ -20,7 +20,11 @@ RSpec.describe 'Posts', type: :request do
 
     describe 'Get all related routes to post show template' do
       before :each do
-        get '/users/:user_id/posts/id'
+        get '/users/:user_id/posts'
+      end
+
+      it 'Renders the show page for the post controller' do
+        expect(response).to render_template('posts/index')
       end
     end
   end
