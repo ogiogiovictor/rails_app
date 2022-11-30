@@ -1,0 +1,15 @@
+<h1> Showing User details  <small><%= @user.name %></small></h1>
+
+<p><strong>ID:</strong> <%= @user.id %></p>
+<p><strong>Photo: </strong> <%= @user.photo %></p>
+<p><strong>Bio:</strong> <%= @user.bio %> </p>
+
+<%  @posts.each do |u| %>
+<div>user post </div>
+<p><strong>Post Title:</strong> <%= u.title %></p>
+<p><strong>Post Body:</strong> <%= u.body %></p>
+<% end %>
+
+
+
+<%= link_to 'Return to users listing', users_path %>
