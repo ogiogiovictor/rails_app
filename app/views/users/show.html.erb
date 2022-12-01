@@ -1,15 +1,40 @@
-<h1> Showing User details  <small><%= @user.name %></small></h1>
 
-<p><strong>ID:</strong> <%= @user.id %></p>
-<p><strong>Photo: </strong> <%= @user.photo %></p>
-<p><strong>Bio:</strong> <%= @user.bio %> </p>
+<div class="container">
+    <div class="container-image">
+        <img style="width:150px" src="https://media.istockphoto.com/id/1055392728/photo/close-up-finger-businessman-stopping-wooden-block-from-falling-in-the-line-of-domino-with.jpg?b=1&s=170667a&w=0&k=20&c=67_nUXv4Ed_maByGD7cygu_Ai6PXM52nkeT94sTCruM=" />
+    </div>
 
-<%  @posts.each do |u| %>
-<div>user post </div>
-<p><strong>Post Title:</strong> <%= u.title %></p>
-<p><strong>Post Body:</strong> <%= u.text %></p>
+        <div class="container-text">
+                <div><h2><%= @user.name %></h2>
+                </div>
+                <div class="pull-right">Number of post <%= @user.post_counter %> </div>
+        </div>
+</div>
+
+<div class="container bio">
+    <%= @user.bio %>
+</div>
+
+<%  @user.recent_posts.each do |u| %>
+    <div class="containerbody">
+        <div><%= u.title %> #<%= u.id %> </div>
+        <div class="content"><%= u.text %></div>
+        <div class="comentlikes">
+            <span>Comments: <%= u.comments.count %></span>
+            <span>Liks: <%= u.likes.count %></span>
+        </div>
+    </div>
 <% end %>
 
 
 
-<%= link_to 'Return to users listing', users_path %>
+
+<%= link_to user_posts_path(@user) do %>
+    <div class="rlistings">
+        <button type="button">See all posts</button>
+    </div>
+<% end %>
+
+<%# <div class="rlistings">
+    <%= link_to 'Return to users listing', users_path %>
+<%# </div> %>

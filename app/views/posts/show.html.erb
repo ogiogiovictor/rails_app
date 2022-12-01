@@ -1,3 +1,23 @@
-<h1>Signle post</h1>
-<p>Title: <%= @post.title %></p>
-<p>Text: <%= @post.text %></p>
+
+    <div class="containerbody">
+         
+                <div class="pdata">
+                 Post #<%= @post.id %>  by <%= @user.name %>
+                    <span>Comments: <%= @post.comments_count %></span> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span>Liks: <%= @post.likes_count %></span>
+                </div>
+           
+          <div class="content">
+            <%= @post.text %>
+          </div>
+        
+    </div>
+
+     <div class="containerbody comments">
+        <div><strong>Comments</strong></div>
+        <div class="all_comments">
+            <% @post.comments.each do |comment| %>
+                <p> <%=comment.author.name %>: <%=comment.text %></p>
+            <% end %>
+        </div>
+    </div>
