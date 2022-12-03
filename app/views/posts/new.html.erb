@@ -1,0 +1,15 @@
+<h2> Add New Post</h2>
+
+<%= form_with model: @post, url: user_posts_path, method: :post, local: true do |f| %>
+       
+       <%= f.hidden_field :comments_count, value: 0 %>
+       <%= f.hidden_field :likes_count, value: 0 %>
+
+    <div>
+      <%= f.text_field :title, placeholder: "Title", class: "post-input"%>
+    </div>
+    <div>
+      <%= f.text_area :text, placeholder: "Enter Text" %>
+    </div>
+    <%= f.submit "Post", class: 'button'%>
+<% end %>

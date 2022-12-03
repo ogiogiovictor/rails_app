@@ -1,0 +1,13 @@
+<% if obj.errors.any? %>
+    <div>
+        <h2>The following errors prevented the blog from being saved:</h2>
+        <%# <%= pluralize(@blog.errors.count, "error") %> 
+        <%# prohibited this blog from being saved:  %>
+        </h2>
+        <ul>
+        <% obj.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+        </ul>
+    </div>
+<% end %>
