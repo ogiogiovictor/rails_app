@@ -1,6 +1,37 @@
-<h1> All posts go here </h1>
-<% @posts.each do |post| %>
 
-  <p>Title: <%= post.title %></p>
-  <p>Author: <%= post.text %></p>
+<div class="container">
+    <div class="container-image">
+        <img style="width:150px" src="https://media.istockphoto.com/id/1055392728/photo/close-up-finger-businessman-stopping-wooden-block-from-falling-in-the-line-of-domino-with.jpg?b=1&s=170667a&w=0&k=20&c=67_nUXv4Ed_maByGD7cygu_Ai6PXM52nkeT94sTCruM=" />
+    </div>
+
+        <div class="container-text">
+                <div><h2><%= @user.name %></h2>
+                </div>
+                <div class="pull-right">Number of post <%= @user.post_counter %> </div>
+        </div>
+</div>
+
+<%  @posts.each do |u| %>
+    <div class="containerbody">
+      <%= link_to user_post_path(@user, u) do%>
+          <div><%= u.title %> #<%= u.id %> </div>
+          <div class="content"><%= u.text %></div>
+          <div class="comentlikes">
+              <span>Comments: <%= u.comments.count %></span>
+              <span>Liks: <%= u.likes.count %></span>
+          </div>
+      <% end %>
+    </div>
+
+     <div class="containerbody comments">
+        <div><strong>Comments</strong></div>
+        <div class="all_comments">
+            <% u.recent_comment.each do |comment| %>
+                <p> <%=comment.author.name %>: <%=comment.text %></p>
+            <% end %>
+        </div>
+    </div>
 <% end %>
+
+
+ <center> <button>Pagination</button> </center>
