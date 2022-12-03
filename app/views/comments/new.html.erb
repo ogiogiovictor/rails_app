@@ -1,0 +1,10 @@
+  <p class="post-title">Add New Comment :</p>
+    <%= form_with model: @comment, url: user_post_comments_path, method: :post, local: true do |f| %>
+    
+        <div><%= f.label :AddComment %></div>
+        <%= f.text_area :text, placeholder: "Enter comment here!", required: true %>        
+
+    <div>
+        <%= f.submit "Save", class: "button" %>
+    </div>
+    <% end %>

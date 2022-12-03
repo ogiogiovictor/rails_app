@@ -2,9 +2,9 @@
     <div class="containerbody">
          
                 <div class="pdata">
-                 Post #<%= @post.id %>  by <%= @user.name %>
-                    <span>Comments: <%= @post.comments_count %></span> &nbsp;&nbsp;&nbsp;&nbsp;
-                    <span>Liks: <%= @post.likes_count %></span>
+                 Post <%= @post.title %> by <%= @user.name %>
+                    <span>Comments : <%= @post.comments.count || 0  %> &nbsp;&nbsp;&nbsp;&nbsp;</span> 
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;Likes : <%= @post.likes.count || 0  %> &nbsp;&nbsp;&nbsp;&nbsp;</span>
                 </div>
            
           <div class="content">
@@ -21,3 +21,9 @@
             <% end %>
         </div>
     </div>
+
+     <div class="containerbody comments">
+    
+     <%= button_to "Add Comment", new_user_post_comment_path(@post.author, @post), method: :get, class: "button" %>
+     <%= button_to "Add Like", new_user_post_like_path(@post.author, @post), method: :get, class: "button" %>   
+     </div>

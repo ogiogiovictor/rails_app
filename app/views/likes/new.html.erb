@@ -1,0 +1,6 @@
+<section class="container">
+<div>Add Likes</div><br/>
+    <%= form_with(model: @like, url: user_post_likes_path) do |form| %>
+    <%= form.submit 'Add Like', class: "button" %>
+    <% end %>
+</section>
