@@ -26,7 +26,56 @@ RSpec.describe 'User Show', type: :feature do
     )
   end
     describe 'user show pages' do
-       
+       describe 'a user show page' do
+    it 'displays the users profile photo' do
+      visit user_path(@user)
+      expect(page).to have_css("img[src*='http://promise.com']")
+    end
+  end
+
+  it 'displays the user name' do
+    visit user_path(@user)
+    expect(page).to have_content('Promise')
+  end
+
+  it 'displays the user bio' do
+    visit user_path(@user)
+    expect(page).to have_content('Fullstack Developer')
+  end
+
+  it 'displays the right Number of posts' do
+    visit user_path(@user)
+    expect(page).to have_content('2')
+  end
+
+  it 'displays all the available users posts' do
+    visit user_path(@user)
+    expect(page).to have_content('First post')
+    expect(page).to have_content('Second post')
+  end
+
+  it 'displays a button that helps view all of a users posts' do
+    visit user_path(@user)
+    expect(page).to have_content('see all posts')
+  end
+
+  it 'click to see all posts, it redirects to the users posts index page' do
+    visit user_path(@user)
+    click_link 'see all posts'
+    expect(page).to have_current_path(user_posts_path(@user))
+  end
+
+  it 'click a users post, it redirects to the posts show page' do
+    visit user_path(@user)
+    click_link 'First post'
+    expect(page).to have_current_path(user_post_path(@user, @post1))
+  end
+
+  it 'click a users post, it redirects to the posts show page' do
+    visit user_path(@user)
+    click_link 'Second post'
+    expect(page).to have_current_path(user_post_path(@user, @post2))
+  end
     end
 
 end
