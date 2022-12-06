@@ -1,13 +1,16 @@
 
 <div class="container">
-    <div class="container-image">
-        <img style="width:150px" src="https://media.istockphoto.com/id/1055392728/photo/close-up-finger-businessman-stopping-wooden-block-from-falling-in-the-line-of-domino-with.jpg?b=1&s=170667a&w=0&k=20&c=67_nUXv4Ed_maByGD7cygu_Ai6PXM52nkeT94sTCruM=" />
+    <div class="container-image user-photo">
+      <img src='<%= @user.photo %>' alt='<%= @user.name %> thumbnail' />
+    
+        <%# <img style="width:150px" src="https://media.istockphoto.com/id/1055392728/photo/close-up-finger-businessman-stopping-wooden-block-from-falling-in-the-line-of-domino-with.jpg?b=1&s=170667a&w=0&k=20&c=67_nUXv4Ed_maByGD7cygu_Ai6PXM52nkeT94sTCruM=" /> %>
     </div>
 
         <div class="container-text">
                 <div><h2><%= @user.name %></h2>
                 </div>
                 <div class="pull-right">Number of post <%= @user.post_counter %> </div>
+                 <%= link_to 'Add Post', "/users/#{@user[:id]}/posts/new" %>
         </div>
 </div>
 
@@ -18,6 +21,7 @@
 <%  @user.recent_posts.each do |u| %>
     <div class="containerbody">
         <div><%= u.title %> #<%= u.id %> </div>
+        
         <div class="content"><%= u.text %></div>
         <div class="comentlikes">
             <span>Comments: <%= u.comments.count %></span>
@@ -32,6 +36,7 @@
 <%= link_to user_posts_path(@user) do %>
     <div class="rlistings">
         <button type="button">See all posts</button>
+       
     </div>
 <% end %>
 
