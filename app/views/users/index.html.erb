@@ -1,4 +1,7 @@
-
+<center><h1> All Users </h1>
+<small><%=button_to('Log out', destroy_user_session_path, method: :delete)%></small>
+</center>
+<div>&nbsp;</div>
  <%  @user.each do |u| %>
 <div class="container">
     <div class="container-image">
