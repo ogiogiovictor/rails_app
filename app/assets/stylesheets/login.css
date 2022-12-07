@@ -1,0 +1,33 @@
+.logincontainer {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    column-gap: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #000;
+    padding: 10px;
+  }
+  
+  .logincontainer h2{ 
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #000;
+  }
+
+.logincontainer form{
+    width: 70%;
+    margin: auto;
+}
+
+.logincontainer .field{
+   padding:10px;
+}
+
+.logincontainer input[type="text"], input[type="password"], input[type="email"]{
+   width: 90%;
+    padding: 5px;
+ }
