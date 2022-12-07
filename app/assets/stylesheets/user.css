@@ -21,6 +21,7 @@
   border-width: 2px;
   width: 100%;
   padding: 10px;
+  height: 110px;
 }
 
 .pull-right {
@@ -66,4 +67,8 @@
 a {
   color: #000;
   text-decoration: none;
+}
+
+.card-img-top{
+  width: 100px
 }
