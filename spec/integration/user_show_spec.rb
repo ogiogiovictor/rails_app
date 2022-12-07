@@ -24,6 +24,14 @@ RSpec.describe 'User Show', type: :feature do
       comments_count: 2,
       likes_count: 2
     )
+
+    @post3 = Post.create(
+      author: @user,
+      title: 'Third post',
+      text: 'This is my second post',
+      comments_count: 2,
+      likes_count: 2
+    )
   end
   describe 'user show pages' do
     describe 'a user show page' do
@@ -46,6 +54,10 @@ RSpec.describe 'User Show', type: :feature do
     it 'displays the right Number of posts' do
       visit user_path(@user)
       expect(page).to have_content('2')
+    end
+
+    it 'User can see the first 3 post' do
+      expect(@user.recent_posts.length).to be 3
     end
 
     it 'displays all the available users posts' do
