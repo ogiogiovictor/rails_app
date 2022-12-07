@@ -62,6 +62,11 @@ RSpec.describe 'posts#index', type: :feature do
       expect(@user.likes.count).to eql(1)
     end
 
+    it 'displays a button that helps can see a section for pagination' do
+      visit(user_posts_path(@user.id))
+      expect(page).to have_content('Pagination')
+    end
+
     it "When I click on a post, it redirects me to that post's show page" do
       visit(user_posts_path(@user.id))
       click_link 'Victors Post'

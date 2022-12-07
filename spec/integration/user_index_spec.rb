@@ -39,10 +39,10 @@ RSpec.describe 'Test the Main Index page', type: :feature do
       @second_comment = Comment.create(text: 'Johns Comments', author: User.first, post: @first_user_post)
     end
 
-    # it "I can see the profile picture for each user." do
-    #    visit(user_path(@first_user.id))
-    #   expect(page).to have_css('img[src*="https://ibedc.com/filesupload/imagebuild/625350ecda1e22.55685312.jpg"]')
-    # end
+    it "I can see the profile picture for each user." do
+       visit(user_path(@first_user.id))
+      expect(page).to have_css('img[src*="https://ibedc.com/filesupload/imagebuild/625350ecda1e22.55685312.jpg"]')
+    end
 
     it 'I can see the username of all other users' do
       visit root_path
