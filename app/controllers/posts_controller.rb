@@ -15,6 +15,14 @@ class PostsController < ApplicationController
     @user = current_user
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.author.decrement!(:post_counter)
+    @post.destroy
+
+    redirect_to root_path, status: :see_other
+  end
+
   def create
     @post = Post.new(post_params)
     @post.author_id = current_user.id
