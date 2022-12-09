@@ -21,17 +21,17 @@ class CommentsController < ApplicationController
     end
   end
 
-  private
-
-  def comment_params
-    params.require(:comment).permit(:text)
-  end
-
   def destroy
     @comment = Comment.find(params[:id])
     @post = Post.find(@comment.post_id)
     @post.decrement!(:comment_counter)
     @comment.destroy
     redirect_to user_post_url(@post.author, @post), notice: 'Comment was successfully destroyed.'
+  end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:text)
   end
 end
