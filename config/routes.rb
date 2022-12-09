@@ -11,9 +11,10 @@ Rails.application.routes.draw do
 ######################3 API END POINT ROUTE ########################3######
   namespace :api do
     namespace :v1 do
-      resources :users, only: %i[index show] do
-        resources :posts, only: %i[index show] do
-          resources :comments, only: %i[index create]
+      resources :users do
+        resources :posts do
+          resources :comments 
+          resources :likes
         end
       end
     end
