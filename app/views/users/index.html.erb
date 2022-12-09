@@ -1,19 +1,22 @@
-<center><h1>All User</h1></center>
-
+<center><h1> All Users </h1>
+<small><%=button_to('Log out', destroy_user_session_path, method: :delete)%></small>
+</center>
+<div>&nbsp;</div>
  <%  @user.each do |u| %>
 <div class="container">
     <div class="container-image">
-        <div class="img_div" style="width:150px"><%= image_tag u.photo %></div>
-        <%# <img style="width:150px" src="https://ibedc.com/filesupload/imagebuild/625350ecda1e22.55685312.jpg" /> %>
+        <% if u.photo %>
+             <img  class="card-img-top" src='<%= u.photo %>' alt='<%= u.name %> thumbnail' />
+        <% else %>
+             <img  class="card-img-top" src='https://ibedc.com/filesupload/imagebuild/625350d9526e49.42179551.jpg' alt='<%= u.name %> thumbnail' />
+        <% end %>
     </div>
 
-    
-    
         <div class="container-text">
             <%= link_to user_path(u) do %>
                 <div><h2><%= u.name %></h2>
                 </div>
-                <div class="pull-right">Number of post x </div>
+                <div class="pull-right">Number of post <%= u.post_counter %> </div>
             <% end%>
         </div>
    

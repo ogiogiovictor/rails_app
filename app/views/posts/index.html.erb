@@ -1,7 +1,12 @@
 
 <div class="container">
     <div class="container-image">
-        <img style="width:150px" src="https://media.istockphoto.com/id/1055392728/photo/close-up-finger-businessman-stopping-wooden-block-from-falling-in-the-line-of-domino-with.jpg?b=1&s=170667a&w=0&k=20&c=67_nUXv4Ed_maByGD7cygu_Ai6PXM52nkeT94sTCruM=" />
+     <% if @user.photo %>
+             <img  class="card-img-top" src='<%= @user.photo %>' alt='<%= @user.name %> thumbnail' />
+        <% else %>
+             <img  class="card-img-top" src='https://ibedc.com/filesupload/imagebuild/625350d9526e49.42179551.jpg' alt='<%= @user.name %> thumbnail' />
+        <% end %>
+        
     </div>
 
         <div class="container-text">
