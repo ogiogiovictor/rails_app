@@ -7,6 +7,19 @@ Rails.application.routes.draw do
   #resources :users
   #root to: "home#index"
   root to: 'users#index'
+
+######################3 API END POINT ROUTE ########################3######
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: %i[index show] do
+        resources :posts, only: %i[index show] do
+          resources :comments, only: %i[index create]
+        end
+      end
+    end
+  end
+
+######################3 NORMAL ROUTE WITH VIEWS ########################3######
   resources :users, only: %i[index show] do
     resources :posts, only: %i[index show new create] do
       resources :comments, only: %i[new create]
