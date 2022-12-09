@@ -4,15 +4,6 @@ class CommentsController < ApplicationController
     @user = current_user
   end
 
-  def destroy
-    @comment = Comment.find(params[:id])
-    @post = Post.find(@comment.post_id)
-    @post.decrement!(:comments_count)
-    @comment.destroy
-
-    redirect_to root_path, status: :see_other
-  end
-
   def create
     @post = Post.find(params[:post_id] || params[:id])
     @comment = Comment.new(comment_params)
@@ -28,6 +19,14 @@ class CommentsController < ApplicationController
         format.html { render :new, status: :unprocessable_entity }
       end
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @post = Post.find(@comment.post_id)
+    @post.decrement!(:comment_counter)
+    @comment.destroy
+    redirect_to user_post_url(@post.author, @post), notice: 'Comment was successfully destroyed.'
   end
 
   private
