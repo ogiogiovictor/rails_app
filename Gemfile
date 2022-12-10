@@ -63,7 +63,7 @@ gem 'jwt'
 # Pagy
 gem 'pagy'
 
-# Documentation 
+# Documentation
 gem 'rswag'
 
 group :development, :test do
