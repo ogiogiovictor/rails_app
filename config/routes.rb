@@ -31,3 +31,12 @@ Rails.application.routes.draw do
   #   resources :posts, only: [:index, :show]
   # end
 end
+
+#  namespace 'api' do
+#       resources :posts
+#     end  
+#     resources :posts, only: %i[index new create show] do
+#       namespace 'api' do
+#         resources :comments
+#       end
+#     end

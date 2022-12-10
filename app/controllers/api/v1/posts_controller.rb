@@ -5,7 +5,7 @@ class Api::V1::PostsController < ApplicationController
   def index
     post = Post.where(author_id: params[:user_id])
     if post
-      render json: post, status: :ok
+      render json: @post, status: :ok
     else
       render json: { message: 'No post found' }, status: :not_found
     end

@@ -17,4 +17,12 @@ class Api::V1::UsersController < ApplicationController
   rescue ActiveRecord::RecordNotFound
     render json: { message: 'User not found' }, status: :not_found
   end
+
+  # def api_token
+  #   @user = User.find(params[:id])
+  #   respond_to do |format|
+  #     format.json { render :json => @user.api_token, :status => :ok}
+  #     format.html {}
+  #   end
+  # end
 end
