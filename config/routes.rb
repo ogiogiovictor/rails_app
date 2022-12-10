@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, sign_out_via: [:get, :post]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -9,16 +9,14 @@ Rails.application.routes.draw do
   root to: 'users#index'
 
 ######################3 API END POINT ROUTE ########################3######
-  namespace :api do
-    namespace :v1 do
-      resources :users do
-        resources :posts do
-          resources :comments 
-          resources :likes
-        end
-      end
-    end
+namespace :api, defaults: { format: :json } do
+  post 'auth/login', to: 'authentication#login'
+  resources :users, only: %i[create update destroy] do
+    resources :posts, only: [:index, :show] do
+      resources :comments, only: [:index, :create]
   end
+ end
+end
 
 ######################3 NORMAL ROUTE WITH VIEWS ########################3######
   resources :users, only: %i[index show] do
@@ -32,11 +30,3 @@ Rails.application.routes.draw do
   # end
 end
 
-#  namespace 'api' do
-#       resources :posts
-#     end  
-#     resources :posts, only: %i[index new create show] do
-#       namespace 'api' do
-#         resources :comments
-#       end
-#     end
