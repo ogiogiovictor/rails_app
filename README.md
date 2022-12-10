@@ -24,7 +24,7 @@ After you're finished please remove all the comments and instructions!
 
 <div align="center">
 
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
+  <img src="https://github.com/ogiogiovictor/hello_rails/blob/master/murple_logo.png" alt="logo" width="140"  height="auto" />
   <br/>
 
   <h3><b>Blog</b></h3>
@@ -33,10 +33,9 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 Blog <a name="about-project"></a>
 > A ruby on rails blog with full CRUD operations for managements of posts and comments
 
-**[your_project__name]** is a...
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -85,7 +84,7 @@ After you're finished please remove all the comments and instructions!
 
 > Add a link to your deployed project.
 
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
+- [Live Demo Link](https://github.com/ogiogiovictor/rails_app)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -120,6 +119,12 @@ In order to run this project you need:
 - GitHub: [@githubhandle](https://github.com/ogiogiovictor)
 - Twitter: [@twitterhandle](https://twitter.com/ogiogiovictor)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/ogiogiovictor)
+
+👤 **Author2**
+
+- GitHub: [@githubhandle](https://github.com/Ukaypromiser)
+- Twitter: [@twitterhandle](https://github.com/Ukaypromise)
+- LinkedIn: [LinkedIn](https://github.com/Ukaypromise)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
